@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500);
+body, * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: "Rubik", Verdana, sans-serif;
+  background-color: #000;
+  color: #ccc;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+#main {
+  position: relative;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-around;
+  background-color: #222;
+  width: 100%;
+}
+header span {
+  text-wrap: none;
+}
+header .logo {
+  margin: 0.5rem 1rem 0.5rem 0.5rem;
+  width: 60vw;
+}
+header .logo a {
+  display: flex;
+  align-items: center;
+  width: 30vw;
+}
+header .logo a #header-img {
+  margin-right: 0.5rem;
+  max-height: 5rem;
+  filter: grayscale(1);
+}
+header .logo a .header-logo {
+  font-style: italic;
+  font-weight: 900;
+  font-size: xx-large;
+  color: #ccc;
+  align-self: center;
+}
+@media (max-width: 480px) {
+  header .logo a {
+    width: 100vw;
+  }
+  header .logo a #header-img {
+    max-height: 3rem;
+  }
+  header .logo a .header-logo {
+    font-size: x-large;
+  }
+}
+header nav {
+  min-height: 100%;
+  font-weight: 600;
+}
+header nav ul {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 35vw;
+}
+header nav ul li {
+  display: flex;
+  min-height: 5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+header nav ul li:hover {
+  box-shadow: 0 15px 15px -15px #fff;
+  border-radius: 50%;
+}
+@media (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul li {
+    min-height: 2rem;
+  }
+  header nav ul li:hover {
+    box-shadow: 0 5px 5px -5px #fff;
+  }
+}
+header nav .nav-link {
+  text-align: center;
+  color: #ccc;
+  background: transparent;
+}
+@media (max-width: 480px) {
+  header {
+    flex-wrap: wrap;
+  }
+}
+
+.default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 9rem;
+  min-height: 80vh;
+}
+@media (max-width: 480px) {
+  .default {
+    margin-top: 13rem;
+  }
+}
+
+#description {
+  font-size: large;
+}
+#description h1 {
+  font-size: xx-large;
+}
+#description #nothing {
+  min-width: 50vw;
+  min-height: 50vh;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 35px 35px -35px #fff;
+}
+
+#order form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#order form input[type=email] {
+  width: 50vw;
+  height: 3rem;
+  background-color: black;
+  border-radius: 15px;
+  color: #ccc;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 18pt;
+}
+#order form input[type=submit] {
+  margin-top: 5rem;
+  width: 10rem;
+  border-radius: 15px;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: darkslategray;
+  color: #ccc;
+  font-size: 24pt;
+}
+#order form input:-webkit-autofill {
+  background-color: #333;
+}
+
+#footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  width: 100vw;
+  bottom: 0;
+  background-color: #222;
+}
+#footer ul {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#footer ul li {
+  padding: 1rem;
+}
+#footer span {
+  text-align: center;
+  font-size: small;
+  padding: 1.5rem;
+}
+
+@media (max-width: 641px) {
+  #video {
+    width: 100vw;
+  }
+}
+
+/*# sourceMappingURL=plp.css.map */

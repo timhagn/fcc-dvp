@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>FCC: Build a Product Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="dist/css/plp.css">
+</head>
+
+<body translate="no">
+
+<div id="main">
+    <header id="header">
+        <div class="logo">
+            <a href="#">
+                <img id="header-img" src="https://upload.wikimedia.org/wikipedia/commons/f/f6/HAL9000.svg" alt="Logo">
+                <span class="header-logo">Nada&nbsp;Corp.</span>
+            </a>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#description">About</a></li>
+                <li><a class="nav-link" href="#video-section">Video</a></li>
+                <li><a class="nav-link" href="#order">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <section id="description" class="default">
+            Nada Corp. proudly presents:
+            <h1>NOTHING</h1>
+            <div id="nothing"></div>
+        </section>
+        <section id="video-section" class="default">
+            <iframe id="video" src="https://player.vimeo.com/video/50999578" width="640" height="524" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </section>
+        <section id="order" class="default">
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <input id="email" name="email" type="email" placeholder="Enter your mail to order..." required>
+                <input id="submit" type="submit" value="Order!">
+            </form>
+        </section>
+    </div>
+    <footer id="footer">
+        <nav id="footer-nav">
+            <ul>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <span>&copy; 2018, Nada Corp. (n.d.p. &lt;TH&gt;)</span>
+        </nav>
+    </footer>
+</div>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
