@@ -3,7 +3,7 @@
 Here you may find my finished Projects for the freeCodeCamp  
 Data Visualisation Certification. 
  
-I used React/Redux as well as React together with the Context API.
+I used ES6 / 7 & SCSS.
 You can see try projects visiting my [CodePen](https://codepen.io/timhagn/#) 
 Profile.
 
