@@ -16,6 +16,8 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  min-width: 1024px;
+  min-height: 900px;
   background-color: #000;
   background-size: 64px 128px;
 }
@@ -24,8 +26,10 @@ body {
   flex-direction: column;
   align-self: center;
   position: relative;
-  width: 70vw;
-  height: 70vh;
+  width: 90vw;
+  height: 90vh;
+  min-width: 960px;
+  min-height: 800px;
   background-color: #ccc;
   padding: 1rem;
   border-radius: 15px;
@@ -45,17 +49,17 @@ body {
     font-size: 1rem;
   }
 }
-.wrapper .container #subtitle {
+.wrapper .container #description {
   text-align: center;
   font-size: 1.5rem;
 }
 @media (max-width: 1240px) {
-  .wrapper .container #subtitle {
+  .wrapper .container #description {
     font-size: 1rem;
   }
 }
 @media (max-width: 720px) {
-  .wrapper .container #subtitle {
+  .wrapper .container #description {
     font-size: 0.8rem;
   }
 }
@@ -72,20 +76,6 @@ body {
   .wrapper .container {
     box-shadow: 2px 2px 20px #ccc;
   }
-}
-.wrapper .container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/Maratona_dles_Dolomites_-_Dolomites.jpg") no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  filter: blur(8px) saturate(0) brightness(120%);
-  transform: scaleX(-1);
 }
 
 #tooltip {
@@ -106,21 +96,28 @@ body {
   }
 }
 
-.dot {
-  stroke: #000;
-  opacity: 0.8;
+.counties {
+  fill: none;
+  transform: translate(0, 2rem);
 }
 
-.legend {
-  font-size: 1rem;
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  transform: translate(0, 2rem);
+}
+
+.key {
+  font-size: 0.8rem;
 }
 @media (max-width: 1240px) {
-  .legend {
+  .key {
     font-size: 0.8rem;
   }
 }
 @media (max-width: 320px) {
-  .legend {
+  .key {
     font-size: 0.5rem;
   }
 }
@@ -129,16 +126,10 @@ body {
   text-shadow: 1px 1px 1px white;
 }
 
-#y-axis path {
-  stroke: black;
-  stroke-width: 1px;
-  fill: none;
-}
-
 #x-axis path {
   stroke: black;
   stroke-width: 1px;
   fill: none;
 }
 
-/*# sourceMappingURL=d3hm.css.map */
+/*# sourceMappingURL=d3cm.css.map */
