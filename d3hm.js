@@ -137,5 +137,5 @@ const d3Process = (data) => {
 };
 
 // Create Chart.
-d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json')
+d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json')
     .then((data) => d3Process(data));

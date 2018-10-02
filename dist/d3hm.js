@@ -92,7 +92,7 @@ var d3Process = function d3Process(data) {
 }; // Create Chart.
 
 
-d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json').then(function (data) {
+d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json').then(function (data) {
   return d3Process(data);
 });
 //# sourceMappingURL=d3hm.js.map
