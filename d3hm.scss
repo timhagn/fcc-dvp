@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500);
+body, * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+body {
+  font-family: 'Rubik', Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  background-size: 64px 128px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+    background-color: #ccc;
+    padding: 1rem;
+    border-radius: 15px;
+    z-index: 1;
+
+    #title {
+      text-align: center;
+      font-size: 2rem;
+      @media (max-width: 1240px) {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 720px) {
+        font-size: 1rem;
+      }
+    }
+
+    #description {
+      text-align: center;
+      font-size: 1.5rem;
+      @media (max-width: 1240px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 720px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .chart {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 720px) {
+      width: 90vw;
+    }
+    @media (min-width: 1000px) {
+      box-shadow: 2px 2px 20px #ccc;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/Maratona_dles_Dolomites_-_Dolomites.jpg") no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      filter:  blur(8px) saturate(0) brightness(120%);
+      transform: scaleX(-1);
+    }
+  }
+}
+
+#tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background: lightslategray;
+  box-shadow: 1px 1px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  @media (max-width: 720px) {
+    font-size: 1rem;
+  }
+}
+
+.dot {
+  stroke: #000;
+  opacity: 0.8;
+}
+
+.legend {
+  font-size: 1rem;
+  @media (max-width: 1240px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 0.5rem;
+  }
+}
+
+.tick text {
+  text-shadow: 1px 1px 1px white;
+}
+
+#y-axis path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
+
+#x-axis path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}

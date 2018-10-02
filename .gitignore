@@ -1,6 +1,7 @@
 # Ignore node dir and push file
 node_modules
 gp
+yarn.lock
 
 # IntelliJ project files
 .idea
