@@ -59,15 +59,12 @@ var d3Process = function d3Process(data) {
   x.domain([minYear - 1, maxYear + 1]);
   y.domain([new Date(2017, 0, 1), new Date(2017, 11, 1)]);
   svgChart.append("g").attr("id", "x-axis").attr("transform", "translate(0," + (height - rem2px(2.2)) + ")").call(xAxis);
-  svgChart.append("g").attr("id", "y-axis") //.attr("transform", "translate(0, 42)")
-  .call(yAxis).selectAll(".tick text").style("text-anchor", "end").attr("x", -12).attr("y", 12);
-  svgChart.append('text').attr('transform', 'rotate(-90)').attr('x', -height / 2).attr('y', -50).style('font-size', rem2px(1.2)).text('Months'); //x.domain(d3.extent(monthly, function(d) { return d.year; }));
-
+  svgChart.append("g").attr("id", "y-axis").call(yAxis).selectAll(".tick text").style("text-anchor", "end").attr("x", -12).attr("y", 12);
+  svgChart.append('text').attr('transform', 'rotate(-90)').attr('x', -height / 2).attr('y', -50).style('font-size', rem2px(1.2)).text('Months');
   y.domain(d3.extent(monthly, function (d) {
     return d.month;
   }));
-  svgChart.append("g").classed("map", true) // .attr("transform", "translate(" + padding.left + "," + padding.top + ")")
-  .selectAll("rect").data(monthly).enter().append("rect").attr("class", "cell").attr("x", function (d, i) {
+  svgChart.append("g").classed("map", true).selectAll("rect").data(monthly).enter().append("rect").attr("class", "cell").attr("x", function (d, i) {
     return x(d.year);
   }).attr("y", function (d, i) {
     return y(d.month);
@@ -82,7 +79,7 @@ var d3Process = function d3Process(data) {
   }).on("mouseover", function (d) {
     tooltip.style("opacity", .9);
     tooltip.attr("data-year", d.year);
-    tooltip.html("Year: " + d.year + ", Month: " + timeFormat(d.month) + "<br/><br/>" + "Temperature: " + d3.format(".1f")(d.temperature) + "<br/>" + "Variance: " + d3.format("+.1f")(d.variance)); // Calculate x and y positions for tooltip.
+    tooltip.html("Year: " + d.year + ", Month: " + timeFormat(new Date(2017, d.month, 1)) + "<br/><br/>" + "Temperature: " + d3.format(".1f")(d.temperature) + "<br/>" + "Variance: " + d3.format("+.1f")(d.variance)); // Calculate x and y positions for tooltip.
 
     var mouseX = d3.event.pageX - svgChart.node().getBoundingClientRect().x + 10,
         mouseY = d3.event.pageY - svgChart.node().getBoundingClientRect().y + 10,
@@ -96,7 +93,8 @@ var d3Process = function d3Process(data) {
     tooltip.style("left", x + "px").style("top", y + "px");
   }).on("mouseout", function (d) {
     tooltip.style("opacity", 0);
-  });
+  }); // I adapted the legend to v5.
+
   var legendWidth = 250,
       legendHeight = 250 / colors.length;
   var variance = monthly.map(function (d) {

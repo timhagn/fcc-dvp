@@ -115,7 +115,7 @@ const d3Process = (data) => {
         tooltip.style("opacity", .9);
         tooltip.attr("data-year", d.year);
         tooltip.html("Year: " +  d.year
-            + ", Month: " + timeFormat(d.month) + "<br/><br/>"
+            + ", Month: " + timeFormat(new Date(2017, d.month, 1)) + "<br/><br/>"
             + "Temperature: " + d3.format(".1f")(d.temperature) + "<br/>"
             + "Variance: " + d3.format("+.1f")(d.variance));
 
@@ -138,6 +138,8 @@ const d3Process = (data) => {
         tooltip.style("opacity", 0);
       });
 
+
+  // I adapted the legend to v5.
   const legendWidth = 250,
         legendHeight = 250 / colors.length;
 
