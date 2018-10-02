@@ -178,8 +178,8 @@ const d3Process = (data) => {
       .selectAll("rect")
       .data(legendThreshold.range().map((color) => {
         let d = legendThreshold.invertExtent(color);
-        if (d[0] === null) d[0] = legendX.domain()[0];
-        if (d[1] === null) d[1] = legendX.domain()[1];
+        if (d[0] == null) d[0] = legendX.domain()[0];
+        if (d[1] == null) d[1] = legendX.domain()[1];
         return d;
       }))
       .enter().append("rect")
