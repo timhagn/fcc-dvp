@@ -1,5 +1,5 @@
-const projectName="choropleth";
-localStorage.setItem('example_project', 'D3: Choropleth');
+const projectName="tree-map"
+localStorage.setItem('example_project', 'D3: Tree Map');
 
 const rem2px = (rem) => (rem * parseFloat(getComputedStyle(document.documentElement).fontSize));
 
