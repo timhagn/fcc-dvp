@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500);
+body, * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  vertical-align: baseline;
+}
+body {
+  font-family: 'Rubik', Verdana, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  min-width: 1024px;
+  min-height: 900px;
+  background-color: #000;
+  background-size: 64px 128px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    min-width: 960px;
+    min-height: 800px;
+    background-color: #ccc;
+    padding: 1rem;
+    border-radius: 15px;
+    z-index: 1;
+
+    #title {
+      text-align: center;
+      font-size: 2rem;
+      @media (max-width: 1240px) {
+        font-size: 1.5rem;
+      }
+      @media (max-width: 720px) {
+        font-size: 1rem;
+      }
+    }
+
+    #description {
+      text-align: center;
+      font-size: 1.5rem;
+      @media (max-width: 1240px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 720px) {
+        font-size: 0.8rem;
+      }
+    }
+
+    .chart {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 720px) {
+      width: 90vw;
+    }
+    @media (min-width: 1000px) {
+      box-shadow: 2px 2px 20px #ccc;
+    }
+  }
+}
+
+#tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  background: lightslategray;
+  box-shadow: 1px 1px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  @media (max-width: 720px) {
+    font-size: 1rem;
+  }
+}
+
+.counties {
+  fill: none;
+  transform: translate(0, 2rem);
+}
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  transform: translate(0, 2rem);
+}
+
+.key {
+  font-size: 0.8rem;
+  @media (max-width: 1240px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 0.5rem;
+  }
+}
+
+.tick text {
+  text-shadow: 1px 1px 1px white;
+}
+
+#x-axis path {
+  stroke: black;
+  stroke-width: 1px;
+  fill: none;
+}
