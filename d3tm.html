@@ -17,10 +17,20 @@
 
 <body translate="no">
 
+<header>
+    <nav id="nav-bar">
+        <ul>
+            <li><a class="nav-link" href="?data=kickstarter">Kickstarter Pledges</a></li>
+            <li><a class="nav-link" href="?data=movie">Movie Sales</a></li>
+            <li><a class="nav-link" href="?data=game">Video Game Sales</a></li>
+        </ul>
+    </nav>
+</header>
 <div class="wrapper">
     <h1 id='title'></h1>
     <div id="description"></div>
-    <div class='chart'></div>
+    <svg id='tree-map' width="960" height="570"></svg>
+    <svg id='legend' width="500"></svg>
 </div>
 
 <script src="https://d3js.org/d3.v5.js"></script>

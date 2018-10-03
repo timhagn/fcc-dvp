@@ -7,65 +7,128 @@ body, * {
 }
 body {
   font-family: 'Rubik', Verdana, sans-serif;
+  background-color: #000;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+header {
+  display: inline-flex;
+  position: absolute;
+  top: 0;
+  justify-content: space-around;
+  background-color: #222;
+  width: 100%;
+
+  nav {
+    min-height: 100%;
+    font-weight: 600;
+
+    ul {
+      min-height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 50vw;
+
+      li {
+        width: 100%;
+        background: none;
+
+        &:hover {
+          box-shadow: 0 15px 15px -15px #fff;
+        }
+      }
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+
+        li {
+          min-height: 2rem;
+        }
+        li:hover {
+          box-shadow: 0 5px 5px -5px #fff;
+        }
+      }
+    }
+    .nav-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #ccc;
+      background: transparent;
+      width: 100%;
+      height: 100%;
+      min-height: 5rem;
+    }
+
+  }
+  @media (max-width: 480px) {
+    flex-wrap: wrap;
+  }
 }
 
 .wrapper {
-  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   width: 100vw;
-  min-width: 1024px;
-  min-height: 900px;
+  height:100%;
+  padding-top: 5rem;
+  color: #ccc;
   background-color: #000;
-  background-size: 64px 128px;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    position: relative;
-    width: 90vw;
-    height: 90vh;
-    min-width: 960px;
-    min-height: 800px;
-    background-color: #ccc;
-    padding: 1rem;
-    border-radius: 15px;
-    z-index: 1;
-
-    #title {
-      text-align: center;
-      font-size: 2rem;
-      @media (max-width: 1240px) {
-        font-size: 1.5rem;
-      }
-      @media (max-width: 720px) {
-        font-size: 1rem;
-      }
-    }
-
-    #description {
-      text-align: center;
+  #title {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2rem;
+    color: #ccc;
+    @media (max-width: 1240px) {
       font-size: 1.5rem;
-      @media (max-width: 1240px) {
-        font-size: 1rem;
-      }
-      @media (max-width: 720px) {
-        font-size: 0.8rem;
-      }
     }
-
-    .chart {
-      display: block;
-      margin-top: 0.5rem;
-    }
-
     @media (max-width: 720px) {
-      width: 90vw;
+      font-size: 1rem;
     }
-    @media (min-width: 1000px) {
-      box-shadow: 2px 2px 20px #ccc;
+  }
+
+  #description {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ccc;
+    padding-bottom: 1rem;
+
+    @media (max-width: 1240px) {
+      font-size: 1rem;
+    }
+    @media (max-width: 720px) {
+      font-size: 0.8rem;
+    }
+  }
+
+  svg {
+    font: 10px sans-serif;
+    text-align: center;
+    display: block;
+    margin: auto;
+    transition: all .4s ease;
+  }
+
+  .tile-text{
+    cursor: default;
+  }
+
+  #legend{
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    padding-bottom: 5px;
+    margin: 1rem auto 2rem;
+    text {
+      fill: #ccc;
     }
   }
 }
@@ -84,36 +147,4 @@ body {
   @media (max-width: 720px) {
     font-size: 1rem;
   }
-}
-
-.counties {
-  fill: none;
-  transform: translate(0, 2rem);
-}
-
-.states {
-  fill: none;
-  stroke: #fff;
-  stroke-linejoin: round;
-  transform: translate(0, 2rem);
-}
-
-.key {
-  font-size: 0.8rem;
-  @media (max-width: 1240px) {
-    font-size: 0.8rem;
-  }
-  @media (max-width: 320px) {
-    font-size: 0.5rem;
-  }
-}
-
-.tick text {
-  text-shadow: 1px 1px 1px white;
-}
-
-#x-axis path {
-  stroke: black;
-  stroke-width: 1px;
-  fill: none;
 }
